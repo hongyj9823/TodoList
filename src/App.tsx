@@ -12,20 +12,39 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuContent,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
+import { AppSidebar } from "@/components/app-sidebar";
 
 function App(): JSX.Element {
   return (
     <div className="App">
-      <h1> To do List</h1>
       <Sheet>
         <SheetTrigger>Menu</SheetTrigger>
-        <SheetContent className="w-[400px] sm:w-[540px] side:left">
+        <SheetContent className="w-[400px] sm:w-[540px] side:top">
           <SheetHeader>
             <SheetTitle>Menu</SheetTitle>
             <SheetDescription>Description</SheetDescription>
           </SheetHeader>
         </SheetContent>
       </Sheet>
+      {/* <AppSidebar /> */}
+      <DropdownMenu>
+        <DropdownMenuTrigger>ChatGPT</DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>GPT-4o</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>o3</DropdownMenuItem>
+          <DropdownMenuItem>o4-mini</DropdownMenuItem>
+          <DropdownMenuItem>o4-mini-high</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 }
